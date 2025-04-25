@@ -1,0 +1,19 @@
+global:
+  image:
+    registry: docker.io
+  
+  scheduler:
+    nodeSeletor: {}
+    toleration: {}
+    
+  service:
+    type: LoadBalancer
+
+    
+prometheus:
+  image:
+    repo: prometheus-community/prometheus
+    image: 3.2.0
+    
+thanos:
+  image: mammdoo/thanos
