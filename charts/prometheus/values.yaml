@@ -1,6 +1,6 @@
 global:
   image:
-    registry: docker.io
+    registry: quay.io
   
   scheduler:
     nodeSeletor: {}
@@ -12,8 +12,33 @@ global:
     
 prometheus:
   image:
-    repo: prometheus-community/prometheus
-    image: 3.2.0
+    repo: prometheus/prometheus
+    image: v3.3.0
     
 thanos:
-  image: mammdoo/thanos
+  image:
+    repo: thanos/thanos
+    tag: v0.38.0
+
+alertmanager:
+  image:
+    repo: prometheus/alertmanager
+    tag: v0.28.1
+    
+exporters:
+  node:
+    enable: true
+    toleration:
+    image:
+      repo: prometheus/node-exporter
+      tag: v1.9.1
+  blackbox:
+    image:
+      repo: prometheus/blackbox-exporter
+      tag: v0.26.0
+  kubeStateMetrics:
+    image:
+      repo: 
+  
+  
+    
